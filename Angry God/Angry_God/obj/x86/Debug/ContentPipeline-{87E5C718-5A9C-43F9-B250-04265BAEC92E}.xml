@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{87E5C718-5A9C-43F9-B250-04265BAEC92E}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_GodContent\</RootDirectory>
+      <LoggerRootDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\</LoggerRootDirectory>
+      <IntermediateDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-11-23T14:17:12.4224141-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

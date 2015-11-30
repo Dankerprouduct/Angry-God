@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angry_God", "Angry God\Angry_God\Angry_God.csproj", "{91DF7C5F-CB96-4495-A0DD-8E2AB8F6270F}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Angry_GodContent", "Angry God\Angry_GodContent\Angry_GodContent.contentproj", "{87E5C718-5A9C-43F9-B250-04265BAEC92E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91DF7C5F-CB96-4495-A0DD-8E2AB8F6270F}.Debug|x86.ActiveCfg = Debug|x86
+		{91DF7C5F-CB96-4495-A0DD-8E2AB8F6270F}.Debug|x86.Build.0 = Debug|x86
+		{91DF7C5F-CB96-4495-A0DD-8E2AB8F6270F}.Release|x86.ActiveCfg = Release|x86
+		{91DF7C5F-CB96-4495-A0DD-8E2AB8F6270F}.Release|x86.Build.0 = Release|x86
+		{87E5C718-5A9C-43F9-B250-04265BAEC92E}.Debug|x86.ActiveCfg = Debug|x86
+		{87E5C718-5A9C-43F9-B250-04265BAEC92E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
