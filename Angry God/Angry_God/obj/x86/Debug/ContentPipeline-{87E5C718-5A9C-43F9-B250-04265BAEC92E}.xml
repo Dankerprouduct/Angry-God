@@ -28,6 +28,24 @@
       <Output>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Dead).xnb</Output>
       <Time>2015-11-30T01:51:42.1968832-05:00</Time>
     </Item>
+    <Item>
+      <Source>Lightning.png</Source>
+      <Name>Lightning</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Lightning.xnb</Output>
+      <Time>2015-11-30T02:00:33.3545552-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ScoreFont.spritefont</Source>
+      <Name>ScoreFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\ScoreFont.xnb</Output>
+      <Time>2015-11-30T02:56:25.9271734-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{87E5C718-5A9C-43F9-B250-04265BAEC92E}</ContentProjectGUID>

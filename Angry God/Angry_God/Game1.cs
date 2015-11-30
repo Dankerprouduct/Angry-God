@@ -17,6 +17,7 @@ namespace Angry_God
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         KeyboardState keyboardState;
+        KeyboardState oldKeyboardState; 
 
         MouseState mouseState;
         Vector2 mousePosition; 
@@ -24,7 +25,18 @@ namespace Angry_God
         List<Worshiper> worshipers = new List<Worshiper>();
         int worshiperCount = 0;
 
+        Texture2D lighting;
+        bool showLightning;
+        TimeSpan lightingTime = TimeSpan.FromMilliseconds(250);
+        TimeSpan lastLightning; 
+
         TileEngine tileEngine = new TileEngine();
+
+        SpriteFont font;
+        int score = 0;
+        int faith = 100;
+        Texture2D faithBar; 
+        Random randRotation = new Random(); 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -45,8 +57,12 @@ namespace Angry_God
         {
             
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            tileEngine.LoadContent(Content); 
-            
+            tileEngine.LoadContent(Content);
+
+
+            lighting = Content.Load<Texture2D>("Lightning");
+            font = Content.Load<SpriteFont>("ScoreFont");
+            faithBar = Content.Load<Texture2D>("Tile2");
         }
 
         
@@ -60,7 +76,8 @@ namespace Angry_God
         {
             keyboardState = Keyboard.GetState();
             mouseState = Mouse.GetState();
-            mousePosition = new Vector2(mouseState.X, mouseState.Y); 
+            mousePosition = new Vector2(mouseState.X, mouseState.Y);
+             
             if (keyboardState.IsKeyDown(Keys.Escape))
             {
                 this.Exit(); 
@@ -72,16 +89,46 @@ namespace Angry_God
                 worshipers.Add(new Worshiper());
                 worshipers[worshiperCount].LoadContent(Content, mousePosition);
                 worshiperCount++;
-                Console.WriteLine(worshiperCount); 
+                Console.WriteLine(worshiperCount);
+                
+
             }
 
+            if(keyboardState.IsKeyDown(Keys.D1) && oldKeyboardState.IsKeyUp(Keys.D1))
+            {
+                showLightning = true;
+                faith -= 10; 
+            }
+            if (lastLightning + lightingTime < gameTime.TotalGameTime)
+            {
+                showLightning = false;
+                lastLightning = gameTime.TotalGameTime;
+                faith--; 
+            }
+
+
+            oldKeyboardState = keyboardState; 
             oldMouseState = mouseState;
+
 
             foreach(Worshiper worship in worshipers)
             {
-                worship.Update(gameTime); 
+                worship.Update(gameTime);
+                
             }
-
+            
+            for(int i = 0; i < worshipers.Count; i++)
+            {
+                if (worshipers[i].destroy)
+                {
+                    
+                    worshipers.RemoveAt(i);
+                    worshiperCount--;
+                    Console.WriteLine("Removed worshiper " + i);
+                    score = score + 10;
+                    faith = faith + (score / 3); 
+                }
+            }
             base.Update(gameTime);
         }
 
@@ -95,7 +142,14 @@ namespace Angry_God
             {
                 worship.Draw(spriteBatch); 
             }
-            
+
+            if (showLightning)
+            {
+                spriteBatch.Draw(lighting, new Vector2(oldMouseState.X - (lighting.Width / 2 - 25), oldMouseState.Y - lighting.Height),null, Color.White, randRotation.Next(0, 5), new Vector2(0,0), 1f, SpriteEffects.None, 1f); 
+            }
+            spriteBatch.DrawString(font, "Score " + score, new Vector2(10, 10), Color.White);
+            spriteBatch.DrawString(font, "Faith ", new Vector2(10, 40), Color.White);
+            spriteBatch.Draw(faithBar, new Rectangle(96, 50, faith, 23), Color.Red);
             spriteBatch.End();
             base.Draw(gameTime);
         }
