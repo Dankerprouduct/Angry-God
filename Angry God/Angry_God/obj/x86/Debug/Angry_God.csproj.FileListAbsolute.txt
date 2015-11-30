@@ -14,3 +14,6 @@ c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_G
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\Angry_God.exe
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\Angry_God.pdb
+c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile2.xnb
+c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive).xnb
+c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Dead).xnb
