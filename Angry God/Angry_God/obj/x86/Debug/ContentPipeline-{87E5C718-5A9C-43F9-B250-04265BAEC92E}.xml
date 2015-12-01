@@ -46,6 +46,15 @@
       <Output>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\ScoreFont.xnb</Output>
       <Time>2015-11-30T02:56:25.9271734-05:00</Time>
     </Item>
+    <Item>
+      <Source>Tile3.png</Source>
+      <Name>Tile3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile3.xnb</Output>
+      <Time>2015-12-01T14:50:06.2675777-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{87E5C718-5A9C-43F9-B250-04265BAEC92E}</ContentProjectGUID>
@@ -53,10 +62,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_GodContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_GodContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

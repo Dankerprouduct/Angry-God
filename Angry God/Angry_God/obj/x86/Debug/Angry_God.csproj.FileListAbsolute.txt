@@ -19,3 +19,4 @@ c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_G
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Dead).xnb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Lightning.xnb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\ScoreFont.xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile3.xnb

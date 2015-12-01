@@ -97,7 +97,7 @@ namespace Angry_God
             if(keyboardState.IsKeyDown(Keys.D1) && oldKeyboardState.IsKeyUp(Keys.D1))
             {
                 showLightning = true;
-                faith -= 10; 
+                //faith -= 10; 
             }
             if (lastLightning + lightingTime < gameTime.TotalGameTime)
             {
@@ -129,6 +129,7 @@ namespace Angry_God
                     faith = faith + (score / 3); 
                 }
             }
+            tileEngine.Update(gameTime); 
             base.Update(gameTime);
         }
 
@@ -145,7 +146,7 @@ namespace Angry_God
 
             if (showLightning)
             {
-                spriteBatch.Draw(lighting, new Vector2(oldMouseState.X - (lighting.Width / 2 - 25), oldMouseState.Y - lighting.Height),null, Color.White, randRotation.Next(0, 5), new Vector2(0,0), 1f, SpriteEffects.None, 1f); 
+                spriteBatch.Draw(lighting, new Vector2(oldMouseState.X - (lighting.Width / 2 - 25), oldMouseState.Y - lighting.Height),null, Color.White, randRotation.Next(0,1), new Vector2(0,0), 1f, SpriteEffects.None, 1f); 
             }
             spriteBatch.DrawString(font, "Score " + score, new Vector2(10, 10), Color.White);
             spriteBatch.DrawString(font, "Faith ", new Vector2(10, 40), Color.White);
