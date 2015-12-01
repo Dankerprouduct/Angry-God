@@ -16,20 +16,21 @@ namespace Angry_God
     {
         int size = 20;
         public int[,] tileMap;
-        List<Tile> tiles = new List<Tile>();
+        public List<Tile> tiles = new List<Tile>();
 
         MouseState moustState;
         Vector2 mousePosition;
         int x;
         int y;
         SpriteFont font;
-        List<Vector2> nTilePositon = new List<Vector2>(); 
+        List<Vector2> nTilePositon = new List<Vector2>();
+
         public TileEngine()
         {
             tileMap = new int[16, 10]; 
             foreach(int i in tileMap)
             {
-                tiles.Add(new Tile()); 
+                tiles.Add(new Tile(this)); 
             }
             
 
@@ -88,10 +89,10 @@ namespace Angry_God
                tiles[tileMap[x,y]].tileID = 0; 
             }
 
+            
         }
 
 
-        
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -99,7 +100,7 @@ namespace Angry_God
             for(int i = 0; i < tiles.Count; i++)
             {
                 spriteBatch.Draw(tiles[i].tiles[tiles[i].tileID], tiles[i].position, Color.White);
-                spriteBatch.DrawString(font, i.ToString(), tiles[i].position, Color.Black);
+             //   spriteBatch.DrawString(font, i.ToString(), tiles[i].position, Color.Black);
             }            
 
         }
