@@ -77,7 +77,16 @@ namespace Angry_God
 
             foreach(Tile t in tiles)
             {
-                t.Update(gameTime); 
+                t.Update(gameTime);
+                if (t.overRide)
+                {
+                    
+                    t.extinguish = false;
+                    t.fire = false; 
+                    
+                    t.overRide = false;
+                    
+                }
             }
 
             x = Convert.ToInt32(mousePosition.X) / 50;
@@ -87,7 +96,8 @@ namespace Angry_God
                for(int i = 0; i < tiles.Count; i++)
                 {
                     tiles[i].tileID = 0;
-                    tiles[i].fire = false; 
+                    tiles[i].fire = false;
+                    tiles[i].extinguish = false;
                 }
             }
 
@@ -102,7 +112,7 @@ namespace Angry_God
             for(int i = 0; i < tiles.Count; i++)
             {
                 spriteBatch.Draw(tiles[i].tiles[tiles[i].tileID], tiles[i].position, Color.White);
-             //   spriteBatch.DrawString(font, i.ToString(), tiles[i].position, Color.Black);
+              //  spriteBatch.DrawString(font, tiles[i].tileID.ToString(), tiles[i].position, Color.Black);
             }            
 
         }

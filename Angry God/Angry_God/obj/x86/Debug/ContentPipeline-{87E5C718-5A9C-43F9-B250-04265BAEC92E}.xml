@@ -73,6 +73,24 @@
       <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive3).xnb</Output>
       <Time>2015-12-01T21:49:51.0446466-05:00</Time>
     </Item>
+    <Item>
+      <Source>worshiperFont.spritefont</Source>
+      <Name>worshiperFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\worshiperFont.xnb</Output>
+      <Time>2015-12-02T08:37:34.9914602-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tile4.png</Source>
+      <Name>Tile4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile4.xnb</Output>
+      <Time>2015-12-02T10:40:09.7396451-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{87E5C718-5A9C-43F9-B250-04265BAEC92E}</ContentProjectGUID>

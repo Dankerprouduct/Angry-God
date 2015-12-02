@@ -22,3 +22,5 @@ C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_G
 C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive1).xnb
 C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive2).xnb
 C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive3).xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\worshiperFont.xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile4.xnb

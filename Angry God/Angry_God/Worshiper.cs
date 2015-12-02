@@ -41,7 +41,15 @@ namespace Angry_God
         Point mousePosition;
         float fadeOut = 1;
         public bool destroy;
-        public bool onFire; 
+        public bool onFire;
+        TimeSpan time = TimeSpan.FromMilliseconds(5000);
+        TimeSpan lastTime;
+        string saying;
+        SpriteFont font;
+        List<string> phrases = new List<string>();
+        List<string> deathPhrases = new List<string>();
+        string deathText; 
+        float fadeText = 1f; 
         public Worshiper()
         {
             health = 100;
@@ -62,8 +70,31 @@ namespace Angry_God
 
             hitBox = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
             random = new Random();
-            
-           // newPosition = new Vector2(0, 0);
+            font = content.Load<SpriteFont>("worshiperFont");
+            saying = " ";
+            // newPosition = new Vector2(0, 0);
+            time = TimeSpan.FromMilliseconds(random.Next(1000, 20000));
+            phrases.Add("please dont kill us tornado god");
+            phrases.Add("i have sinned, please forgive my soul");
+            phrases.Add("i sure do i hope i dont get smitted");
+            phrases.Add("whats even the point in life");
+            phrases.Add("am i really in control?");
+
+            deathPhrases.Add("AUUGGHHH");
+            deathPhrases.Add("SHIT");
+            deathPhrases.Add("OWWWW");
+            deathPhrases.Add("MY PANCREAS");
+            deathPhrases.Add("MY LEG");
+            deathPhrases.Add("WHY ME");
+            deathPhrases.Add("TELL MY WIFE I LOVE HER");
+            deathPhrases.Add("DAMMIT GOPI");
+            deathPhrases.Add("I NEVER CARED ANYWAYS");
+            deathPhrases.Add("My name is Clyde");
+            deathPhrases.Add("SCREW YOU");
+            deathPhrases.Add("I wanted to burn");
+            deathPhrases.Add("Seemed like a day to die");
+            deathPhrases.Add("OH MY GOSH WHY");
+            deathText = deathPhrases[random.Next(0, deathPhrases.Count)];
         }
         public void Update(GameTime gameTime)
         {
@@ -94,10 +125,32 @@ namespace Angry_God
 
             if (onFire)
             {
-                spazAmmount = 500;
+                spazAmmount = 800;
+
+                deathPhrases.Clear();
+                deathPhrases.Add("i wanted to burn");
+                deathPhrases.Add("it burns");
+                deathPhrases.Add("how did fire get here?");
+                deathPhrases.Add("crap burns");
+                deathPhrases.Add("fammin' hot");
+                deathText = deathPhrases[random.Next(0, deathPhrases.Count)];               
+
                 alive = false; 
             }
 
+            if(lastTime + time < gameTime.TotalGameTime)
+            {
+                fadeText = 1; 
+                saying = phrases[random.Next(0, phrases.Count)];
+                time = TimeSpan.FromMilliseconds(random.Next(1000, 20000)); 
+                lastTime = gameTime.TotalGameTime; 
+            }
+            else
+            {
+                fadeText -= .01f; 
+               // saying = " "; 
+            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -105,11 +158,14 @@ namespace Angry_God
             if (alive)
             {
                 spriteBatch.Draw(finalTexture, position, Color.White);
+                spriteBatch.DrawString(font, saying, new Vector2(position.X + 25, position.Y - 25), Color.White * fadeText); 
+
 
             }
             else
             {
                 spriteBatch.Draw(texture2, position, Color.White * fadeOut);
+                spriteBatch.DrawString(font, deathText.ToUpper(), new Vector2(position.X + 25, position.Y - 25), Color.Red * fadeOut);
                 fadeOut -= .01f;
                 if(fadeOut < .01f)
                 {

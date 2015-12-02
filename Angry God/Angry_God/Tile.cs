@@ -20,14 +20,18 @@ namespace Angry_God
         public int tileID = 0;
         TileEngine tEngine;
 
-        TimeSpan time = TimeSpan.FromMilliseconds(250);
+        TimeSpan time = TimeSpan.FromMilliseconds(500);
         TimeSpan lastTime;
+        TimeSpan time2 = TimeSpan.FromMilliseconds(0);
+        TimeSpan lastTime2; 
         Game1 game1;
         MouseState mouseState;
         Point mousePosition;
         KeyboardState keyboardState;
         Point worshiperPosition;
-        Rectangle hitBox; 
+        Rectangle hitBox;
+        public bool extinguish;
+        public bool overRide; 
         public Tile(TileEngine tileEngine, Game1 game)
         {
             tEngine = tileEngine;
@@ -38,24 +42,126 @@ namespace Angry_God
         {
             
             tiles.Add(content.Load<Texture2D>("Tile2"));
-            tiles.Add(content.Load<Texture2D>("Tile3")); 
+            tiles.Add(content.Load<Texture2D>("Tile3"));
+            tiles.Add(content.Load<Texture2D>("Tile4"));
         }
 
         public void Update(GameTime gameTime)
         {
             hitBox = new Rectangle((int)position.X, (int)position.Y, 50, 50);
 
+            FireSpread(gameTime);
+
+            if(lastTime2 + time2 < gameTime.TotalGameTime)
+            {
+                ExtinguishSpread(gameTime);
+                lastTime2 = gameTime.TotalGameTime; 
+            }
+            
 
 
             if (fire)
             {
                 WorshiperCollisions();
             }
+            
+
+            if (tileID == 1)
+            {
+                fire = true;
+            }
+            else
+            {
+                fire = false; 
+            }
+
+            if (!overRide)
+            {
+                if (hitBox.Contains(mousePosition) && keyboardState.IsKeyDown(Keys.D2))
+                {
+                    tileID = 1;
+                }
+
+                if (tileID == 2)
+                {
+                    fire = false;
+                    extinguish = true;
+                    fire = false;
+                }
+                else
+                {
+                    extinguish = false;
+                }
+            }
+            else
+            {
+                tileID = 0; 
+            }
+            keyboardState = Keyboard.GetState();
+            mouseState = Mouse.GetState();
+            mousePosition = new Point((int)mouseState.X, (int)mouseState.Y);
+
+
+            
+            if (hitBox.Contains(mousePosition) && keyboardState.IsKeyDown(Keys.D3))
+            {
+                tileID = 2;
+            }
+
+            
+        }
+        void ExtinguishSpread(GameTime gameTime)
+        {
+            if (extinguish)
+            {
+               // Console.WriteLine("Extenguishing");
+                for (int i = 0; i < tEngine.tiles.Count; i++)
+                {
+
+
+                    Vector2 checkedPos = new Vector2(position.X - 50, position.Y);
+                    
+                    checkedPos = new Vector2(position.X + 50, position.Y);
+                    if (checkedPos == tEngine.tiles[i].position)
+                    {
+                        tEngine.tiles[i].tileID = 2;
+                        tEngine.tiles[i].fire = false;
+                        tEngine.tiles[i].tileID = 2;
+                        overRide = true;
+                    }
+                    checkedPos = new Vector2(position.X, position.Y + 50);
+                    if (checkedPos == tEngine.tiles[i].position)
+                    {
+                        tEngine.tiles[i].tileID = 2;
+                        tEngine.tiles[i].fire = false;
+                        tEngine.tiles[i].tileID = 2;
+                        overRide = true; 
+                    }
+                    
+                    fire = false;
+                    extinguish = false; 
+
+
+                }
+
+
+                
+
+
+
+                
+
+            }
+            
+        }
+
+        void FireSpread(GameTime gameTime)
+        {
             if (lastTime + time < gameTime.TotalGameTime)
             {
                 if (fire)
                 {
-                    
+
                     for (int i = 0; i < tEngine.tiles.Count; i++)
                     {
 
@@ -64,6 +170,7 @@ namespace Angry_God
                         if (checkedPos == tEngine.tiles[i].position)
                         {
                             tEngine.tiles[i].tileID = 1;
+
                         }
                         checkedPos = new Vector2(position.X + 50, position.Y);
                         if (checkedPos == tEngine.tiles[i].position)
@@ -90,26 +197,6 @@ namespace Angry_God
 
                 lastTime = gameTime.TotalGameTime;
             }
-
-            if (tileID == 1)
-            {
-                fire = true;
-            }
-            else
-            {
-                fire = false; 
-            }
-
-            keyboardState = Keyboard.GetState();
-            mouseState = Mouse.GetState();
-            mousePosition = new Point((int)mouseState.X, (int)mouseState.Y);
-
-            if(hitBox.Contains(mousePosition) && keyboardState.IsKeyDown(Keys.D2))
-            {
-                tileID = 1; 
-            }
-
-
         }
         void WorshiperCollisions()
         {

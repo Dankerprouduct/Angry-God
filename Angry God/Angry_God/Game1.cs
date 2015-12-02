@@ -83,7 +83,7 @@ namespace Angry_God
                 this.Exit(); 
             }
 
-            if(mouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released)
+            if(mouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released )
             {
 
                 worshipers.Add(new Worshiper());
@@ -92,6 +92,13 @@ namespace Angry_God
                 Console.WriteLine(worshiperCount);
                 
 
+            }
+            if (keyboardState.IsKeyDown(Keys.Space))
+            {
+                worshipers.Add(new Worshiper());
+                worshipers[worshiperCount].LoadContent(Content, mousePosition);
+                worshiperCount++;
+                Console.WriteLine(worshiperCount);
             }
 
             if(keyboardState.IsKeyDown(Keys.D1) && oldKeyboardState.IsKeyUp(Keys.D1))
@@ -106,6 +113,14 @@ namespace Angry_God
                 faith--; 
             }
 
+            if( faith >= 700)
+            {
+                faith = 700; 
+            }
+            if(faith <= 0)
+            {
+                Console.WriteLine("You loose"); 
+            }
 
             oldKeyboardState = keyboardState; 
             oldMouseState = mouseState;
