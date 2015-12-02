@@ -20,12 +20,18 @@ namespace Angry_God
         public int tileID = 0;
         TileEngine tEngine;
 
-        TimeSpan time = TimeSpan.FromMilliseconds(9000);
+        TimeSpan time = TimeSpan.FromMilliseconds(250);
         TimeSpan lastTime;
-
-        public Tile(TileEngine tileEngine)
+        Game1 game1;
+        MouseState mouseState;
+        Point mousePosition;
+        KeyboardState keyboardState;
+        Point worshiperPosition;
+        Rectangle hitBox; 
+        public Tile(TileEngine tileEngine, Game1 game)
         {
-            tEngine = tileEngine; 
+            tEngine = tileEngine;
+            game1 = game; 
         }
 
         public void LoadContent(ContentManager content)
@@ -37,11 +43,19 @@ namespace Angry_God
 
         public void Update(GameTime gameTime)
         {
+            hitBox = new Rectangle((int)position.X, (int)position.Y, 50, 50);
+
+
 
             if (fire)
             {
-                if (lastTime + time < gameTime.TotalGameTime)
+                WorshiperCollisions();
+            }
+            if (lastTime + time < gameTime.TotalGameTime)
+            {
+                if (fire)
                 {
+                    
                     for (int i = 0; i < tEngine.tiles.Count; i++)
                     {
 
@@ -71,17 +85,46 @@ namespace Angry_God
 
                     }
 
-                    lastTime = gameTime.TotalGameTime;
+
+                }
+
+                lastTime = gameTime.TotalGameTime;
+            }
+
+            if (tileID == 1)
+            {
+                fire = true;
+            }
+            else
+            {
+                fire = false; 
+            }
+
+            keyboardState = Keyboard.GetState();
+            mouseState = Mouse.GetState();
+            mousePosition = new Point((int)mouseState.X, (int)mouseState.Y);
+
+            if(hitBox.Contains(mousePosition) && keyboardState.IsKeyDown(Keys.D2))
+            {
+                tileID = 1; 
+            }
+
+
+        }
+        void WorshiperCollisions()
+        {
+            for(int i = 0; i < game1.worshipers.Count; i++)
+            {
+                worshiperPosition = new Point((int)game1.worshipers[i].position.X, (int)game1.worshipers[i].position.Y);
+
+                if (hitBox.Contains(worshiperPosition))
+                {
+                    game1.worshipers[i].onFire = true; 
                 }
                 
             }
-            if(tileID == 1)
-            {
-                fire = true; 
-            }
 
         }
-        
         
     }
 }

@@ -15,8 +15,10 @@ c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_G
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\Angry_God.exe
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\obj\x86\Debug\Angry_God.pdb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile2.xnb
-c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive).xnb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Dead).xnb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Lightning.xnb
 c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\ScoreFont.xnb
 C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile3.xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive1).xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive2).xnb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive3).xnb

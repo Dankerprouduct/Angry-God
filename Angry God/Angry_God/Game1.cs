@@ -22,15 +22,15 @@ namespace Angry_God
         MouseState mouseState;
         Vector2 mousePosition; 
         MouseState oldMouseState;
-        List<Worshiper> worshipers = new List<Worshiper>();
+        public List<Worshiper> worshipers = new List<Worshiper>();
         int worshiperCount = 0;
 
         Texture2D lighting;
         bool showLightning;
         TimeSpan lightingTime = TimeSpan.FromMilliseconds(250);
-        TimeSpan lastLightning; 
+        TimeSpan lastLightning;
 
-        TileEngine tileEngine = new TileEngine();
+        TileEngine tileEngine; 
 
         SpriteFont font;
         int score = 0;
@@ -55,7 +55,7 @@ namespace Angry_God
         
         protected override void LoadContent()
         {
-            
+            tileEngine = new TileEngine(this);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             tileEngine.LoadContent(Content);
 

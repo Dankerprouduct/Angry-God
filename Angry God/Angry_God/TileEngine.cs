@@ -25,12 +25,12 @@ namespace Angry_God
         SpriteFont font;
         List<Vector2> nTilePositon = new List<Vector2>();
 
-        public TileEngine()
+        public TileEngine(Game1 game)
         {
             tileMap = new int[16, 10]; 
             foreach(int i in tileMap)
             {
-                tiles.Add(new Tile(this)); 
+                tiles.Add(new Tile(this, game)); 
             }
             
 
@@ -44,7 +44,6 @@ namespace Angry_God
             }
             font = content.Load<SpriteFont>("ScoreFont");
             // Console.WriteLine(tiles[tileMap[x, y]]);
-            tiles[1].tileID = 0;
 
             
             for(int x = 0; x < 16; x++)
@@ -61,7 +60,6 @@ namespace Angry_God
             }
 
 
-            tiles[85].tileID = 1; 
 
         }
 
@@ -86,7 +84,11 @@ namespace Angry_God
             y = Convert.ToInt32(mousePosition.Y) / 50;
             if(moustState.RightButton == ButtonState.Pressed)
             {
-               tiles[tileMap[x,y]].tileID = 0; 
+               for(int i = 0; i < tiles.Count; i++)
+                {
+                    tiles[i].tileID = 0;
+                    tiles[i].fire = false; 
+                }
             }
 
             

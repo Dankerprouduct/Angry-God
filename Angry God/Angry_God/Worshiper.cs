@@ -12,13 +12,18 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Angry_God
 {
-    class Worshiper
+    public class Worshiper
     {
         int health;
         int speed;
         Texture2D texture;
-        Texture2D texture2; 
-        Vector2 position;
+        Texture2D textureblue;
+        Texture2D texturePurple; 
+        Texture2D texture2;
+        Texture2D finalTexture;
+        List<Texture2D> aliveTextures;
+
+        public Vector2 position;
 
         Vector2 newPosition;
         Random random;
@@ -35,7 +40,8 @@ namespace Angry_God
         Rectangle hitBox;
         Point mousePosition;
         float fadeOut = 1;
-        public bool destroy; 
+        public bool destroy;
+        public bool onFire; 
         public Worshiper()
         {
             health = 100;
@@ -45,10 +51,16 @@ namespace Angry_God
         public void LoadContent(ContentManager content, Vector2 mPos)
         {
             position = mPos;
-            
-            texture = content.Load<Texture2D>("orangeGuy(Alive)");
+            aliveTextures = new List<Texture2D>();
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive1)"));
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive2)"));
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive3)"));
             texture2 = content.Load<Texture2D>("orangeGuy(Dead)");
-            hitBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            random = new Random(); 
+            int index = random.Next(0, aliveTextures.Count); 
+            finalTexture = aliveTextures[index]; 
+
+            hitBox = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
             random = new Random();
             
            // newPosition = new Vector2(0, 0);
@@ -68,7 +80,7 @@ namespace Angry_God
             newPosition = new Vector2(xPos, yPos);
             position = Vector2.Lerp(position, newPosition, .01f);
 
-            hitBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
 
             if (hitBox.Contains(mousePosition) && (keyboardState.IsKeyDown(Keys.D1) && oldKeyboardState.IsKeyUp(Keys.D1)))
             {
@@ -80,13 +92,19 @@ namespace Angry_God
 
             oldKeyboardState = keyboardState;
 
+            if (onFire)
+            {
+                spazAmmount = 500;
+                alive = false; 
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (alive)
             {
-                spriteBatch.Draw(texture, position, Color.White);
+                spriteBatch.Draw(finalTexture, position, Color.White);
 
             }
             else

@@ -11,15 +11,6 @@
       <Time>2015-11-30T01:19:04.6295567-05:00</Time>
     </Item>
     <Item>
-      <Source>orangeGuy(Alive).png</Source>
-      <Name>orangeGuy(Alive)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>c:\users\david\documents\visual studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive).xnb</Output>
-      <Time>2015-11-30T01:10:59.0109971-05:00</Time>
-    </Item>
-    <Item>
       <Source>orangeGuy(Dead).png</Source>
       <Name>orangeGuy(Dead)</Name>
       <Importer>TextureImporter</Importer>
@@ -54,6 +45,33 @@
       <Options>None</Options>
       <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile3.xnb</Output>
       <Time>2015-12-01T14:50:06.2675777-05:00</Time>
+    </Item>
+    <Item>
+      <Source>orangeGuy(Alive1).png</Source>
+      <Name>orangeGuy(Alive1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive1).xnb</Output>
+      <Time>2015-11-30T01:10:59.0109971-05:00</Time>
+    </Item>
+    <Item>
+      <Source>orangeGuy(Alive2).png</Source>
+      <Name>orangeGuy(Alive2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive2).xnb</Output>
+      <Time>2015-12-01T21:49:40.6859184-05:00</Time>
+    </Item>
+    <Item>
+      <Source>orangeGuy(Alive3).png</Source>
+      <Name>orangeGuy(Alive3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive3).xnb</Output>
+      <Time>2015-12-01T21:49:51.0446466-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
