@@ -32,7 +32,7 @@ namespace Angry_God
         int xPos;
         int yPos;
         int spazAmmount = 100;
-        bool alive = true;
+        public bool alive = true;
 
         MouseState mouseState;
         KeyboardState keyboardState;
@@ -49,7 +49,9 @@ namespace Angry_God
         List<string> phrases = new List<string>();
         List<string> deathPhrases = new List<string>();
         string deathText; 
-        float fadeText = 1f; 
+        float fadeText = 1f;
+        public int index;
+        public Rectangle worshiperRect; 
         public Worshiper()
         {
             health = 100;
@@ -59,15 +61,20 @@ namespace Angry_God
         public void LoadContent(ContentManager content, Vector2 mPos)
         {
             position = mPos;
+            
             aliveTextures = new List<Texture2D>();
             aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive1)"));
             aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive2)"));
             aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive3)"));
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive4)"));
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive5)"));
+            aliveTextures.Add(content.Load<Texture2D>("orangeGuy(Alive6)"));
+
             texture2 = content.Load<Texture2D>("orangeGuy(Dead)");
             random = new Random(); 
-            int index = random.Next(0, aliveTextures.Count); 
-            finalTexture = aliveTextures[index]; 
-
+            index = random.Next(0, aliveTextures.Count); 
+            finalTexture = aliveTextures[index];
+            worshiperRect = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
             hitBox = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
             random = new Random();
             font = content.Load<SpriteFont>("worshiperFont");
@@ -81,13 +88,13 @@ namespace Angry_God
             phrases.Add("am i really in control?");
 
             deathPhrases.Add("AUUGGHHH");
-            deathPhrases.Add("SHIT");
+            deathPhrases.Add("CRAP");
             deathPhrases.Add("OWWWW");
             deathPhrases.Add("MY PANCREAS");
             deathPhrases.Add("MY LEG");
             deathPhrases.Add("WHY ME");
             deathPhrases.Add("TELL MY WIFE I LOVE HER");
-            deathPhrases.Add("DAMMIT GOPI");
+            deathPhrases.Add("dangit GOPI");
             deathPhrases.Add("I NEVER CARED ANYWAYS");
             deathPhrases.Add("My name is Clyde");
             deathPhrases.Add("SCREW YOU");
@@ -101,7 +108,7 @@ namespace Angry_God
             mouseState = Mouse.GetState();
             keyboardState = Keyboard.GetState();
 
-            
+            worshiperRect = new Rectangle((int)position.X, (int)position.Y, finalTexture.Width, finalTexture.Height);
 
             mousePosition = new Point(mouseState.X, mouseState.Y);
 
@@ -116,13 +123,13 @@ namespace Angry_God
             if (hitBox.Contains(mousePosition) && (keyboardState.IsKeyDown(Keys.D1) && oldKeyboardState.IsKeyUp(Keys.D1)))
             {
                 alive = false;
-                Console.WriteLine("smited"); 
+               // Console.WriteLine("smited"); 
             }
 
             
 
             oldKeyboardState = keyboardState;
-
+            Collision();
             if (onFire)
             {
                 spazAmmount = 800;
@@ -152,6 +159,26 @@ namespace Angry_God
             }
             
         }
+        void Collision()
+        {
+            if(position.X + 25 > 800)
+            {
+                position.X -= 25; 
+            }
+            if(position.X < 0)
+            {
+                position.X = 0; 
+            }
+            if(position.Y < 0)
+            {
+                position.Y = 0;
+            }
+            if(position.Y + 25 > 480)
+            {
+                position.Y -= 25; 
+            }
+        }
+
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -159,7 +186,6 @@ namespace Angry_God
             {
                 spriteBatch.Draw(finalTexture, position, Color.White);
                 spriteBatch.DrawString(font, saying, new Vector2(position.X + 25, position.Y - 25), Color.White * fadeText); 
-
 
             }
             else

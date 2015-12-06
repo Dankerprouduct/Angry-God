@@ -91,6 +91,42 @@
       <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Tile4.xnb</Output>
       <Time>2015-12-02T10:40:09.7396451-05:00</Time>
     </Item>
+    <Item>
+      <Source>orangeGuy(Alive4).png</Source>
+      <Name>orangeGuy(Alive4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive4).xnb</Output>
+      <Time>2015-12-02T12:23:46.9380452-05:00</Time>
+    </Item>
+    <Item>
+      <Source>orangeGuy(Alive5).png</Source>
+      <Name>orangeGuy(Alive5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive5).xnb</Output>
+      <Time>2015-12-02T12:24:08.2906557-05:00</Time>
+    </Item>
+    <Item>
+      <Source>orangeGuy(Alive6).png</Source>
+      <Name>orangeGuy(Alive6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\orangeGuy(Alive6).xnb</Output>
+      <Time>2015-12-02T12:24:19.3495821-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Cop.png</Source>
+      <Name>Cop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2015\Projects\Angry God\Angry God\Angry_God\bin\x86\Debug\Content\Cop.xnb</Output>
+      <Time>2015-12-03T12:21:15.2174583-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{87E5C718-5A9C-43F9-B250-04265BAEC92E}</ContentProjectGUID>

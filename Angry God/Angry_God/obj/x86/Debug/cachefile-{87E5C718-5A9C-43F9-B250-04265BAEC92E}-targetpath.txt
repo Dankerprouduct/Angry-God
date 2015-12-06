@@ -8,3 +8,7 @@ Content\orangeGuy(Alive2).xnb
 Content\orangeGuy(Alive3).xnb
 Content\worshiperFont.xnb
 Content\Tile4.xnb
+Content\orangeGuy(Alive4).xnb
+Content\orangeGuy(Alive5).xnb
+Content\orangeGuy(Alive6).xnb
+Content\Cop.xnb

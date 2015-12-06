@@ -20,7 +20,7 @@ namespace Angry_God
         public int tileID = 0;
         TileEngine tEngine;
 
-        TimeSpan time = TimeSpan.FromMilliseconds(500);
+        TimeSpan time = TimeSpan.FromMilliseconds(250);
         TimeSpan lastTime;
         TimeSpan time2 = TimeSpan.FromMilliseconds(0);
         TimeSpan lastTime2; 
@@ -29,6 +29,7 @@ namespace Angry_God
         Point mousePosition;
         KeyboardState keyboardState;
         Point worshiperPosition;
+        Point copPosition; 
         Rectangle hitBox;
         public bool extinguish;
         public bool overRide; 
@@ -63,12 +64,15 @@ namespace Angry_God
             if (fire)
             {
                 WorshiperCollisions();
+                CopCollision();  
             }
             
 
             if (tileID == 1)
             {
                 fire = true;
+                
+                
             }
             else
             {
@@ -161,6 +165,7 @@ namespace Angry_God
             {
                 if (fire)
                 {
+                    game1.faith--;
 
                     for (int i = 0; i < tEngine.tiles.Count; i++)
                     {
@@ -198,6 +203,18 @@ namespace Angry_God
                 lastTime = gameTime.TotalGameTime;
             }
         }
+        void CopCollision()
+        {
+            for(int i = 0; i < game1.cops.Count; i++)
+            {
+                copPosition = new Point((int)game1.cops[i].position.X, (int)game1.cops[i].position.Y);
+
+                if (hitBox.Contains(copPosition))
+                {
+                    game1.cops[i].alive = false; 
+                }
+            }
+        }
         void WorshiperCollisions()
         {
             for(int i = 0; i < game1.worshipers.Count; i++)
@@ -210,6 +227,7 @@ namespace Angry_God
                 }
                 
             }
+
 
         }
         
